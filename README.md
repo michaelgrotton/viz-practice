@@ -8,7 +8,9 @@ the graphs are in the files:
   ![tweets viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/tweets.png)
   * movies.html
   ![movies viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/movies.png)
-  * boxplot.html
-  ![boxplot viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/boxplot.png) 
+  * boxplots.html
+  ![boxplot viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/boxplots.png) 
+  * cities.html
+  ![boxplot viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/cities.png)
   
 If you'd like to see these visualizations in a browser, you will need to download the repo, cd into it and then run ```python 3 http.server 8000 &``` and then navigate to localhost:8000 in your browser

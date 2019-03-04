@@ -13,6 +13,6 @@ the graphs are in the files:
   * cities.html
   ![boxplot viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/cities.png)
   
-If you'd like to see these visualizations in a browser, you will need to download the repo, cd into it and then run ```python 3 http.server 8000 &``` and then navigate to localhost:8000 in your browser
+If you'd like to see these visualizations in a browser, you will need to download the repo, cd into it and then run ```python 3 http.server 8000 &``` and then navigate to ```localhost:8000``` in your browser
 
-Eventually future visualizations these will be on bl.ocks and on my personal blog
+Eventually future visualizations like these will be on bl.ocks and on my personal blog

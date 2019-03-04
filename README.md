@@ -5,7 +5,7 @@ the graphs are in the files:
   * soccer.html (can click the buttons to adjust the size of the data)
   ![soccer viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/soccer.png)
   * tweets.html
-  ![tweets viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/tweets.png)
+  ![tweets viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/tweet.png)
   * movies.html
   ![movies viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/movies.png)
   * boxplots.html
@@ -14,3 +14,5 @@ the graphs are in the files:
   ![boxplot viz](https://raw.githubusercontent.com/michaelgrotton/viz-practice/master/cities.png)
   
 If you'd like to see these visualizations in a browser, you will need to download the repo, cd into it and then run ```python 3 http.server 8000 &``` and then navigate to localhost:8000 in your browser
+
+Eventually future visualizations these will be on bl.ocks and on my personal blog

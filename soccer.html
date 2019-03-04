@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+    text {
+        font-size:10px;
+        text-anchor:middle;
+        fill:#4f442b;
+    }
+    g > text.active {
+        font-size:30px;
+    }
+    circle {
+        fill: #75739F;
+        stroke:black;
+        stroke-width:1px;
+    }
+    circle.active {
+        fill:#FE9922;
+    }
+    circle.inactive {
+        fill:#C4B9AC;
+    }
+</style>
+</head>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://d3js.org/colorbrewer.v1.min.js"></script>
+<script src="soccerviz.js"></script>
+<body onload="createSoccerViz()">
+    <div id="viz">
+        <svg style="width:500px;height:500px;border:1px lightgray solid;" />
+    </div>
+    <div id="controls" />
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <svg style="width:500px;height:500px;border:1px lightgray solid;" />
+    <script>
+    d3.csv("tweetdata.csv")
+        .then(function(data) {
+            const blue = "#5eaec5", green = "#92c463", orange = "#fe9a22"
+
+            xScale = d3.scaleLinear().domain([1,10.5]).range([20,480])
+            yScale = d3.scaleLinear().domain([0,35]).range([480,20])
+            xAxis = d3.axisBottom()
+                .scale(xScale)
+                .ticks(10)
+                .tickSize(480)
+                .tickSizeOuter(0)
+
+            d3.select("svg").append("g").attr("class","xAxisG").call(xAxis)
+            d3.select("svg").select("g.xAxisG").select("path").attr("stroke","white")
+
+            yAxis = d3.axisRight()
+                .scale(yScale)
+                .ticks(8)
+                .tickSize(480)
+                .tickSizeOuter(0)
+                
+            d3.select("svg").append("g").attr("class","yAxisG").call(yAxis)
+            d3.select("svg").select("g.yAxisG").select("path").attr("stroke","white")
+
+            d3.select("svg").selectAll("circle.tweets")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("class","tweets")
+                .attr("r",5)
+                .attr("cx",d => xScale(d.day))
+                .attr("cy", d => yScale(d.tweets))
+                .style("fill",blue)
+            d3.select("svg").selectAll("circle.retweets")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("class","retweets")
+                .attr("r",5)
+                .attr("cx",d => xScale(d.day))
+                .attr("cy", d => yScale(d.retweets))
+                .style("fill",green)
+            d3.select("svg").selectAll("circle.favorites")
+                .data(data)
+                .enter()
+                .append("circle")
+                .attr("class","favorites")
+                .attr("r",5)
+                .attr("cx",d => xScale(d.day))
+                .attr("cy", d => yScale(d.favorites))
+                .style("fill",orange)
+
+            var tweetLine = d3.line()
+                .x(d => xScale(d.day))
+                .y(d => yScale(d.tweets))
+            var retweetLine = d3.line()
+                .x(d => xScale(d.day))
+                .y(d => yScale(d.retweets))
+            var favoriteLine = d3.line()
+                .x(d => xScale(d.day))
+                .y(d => yScale(d.favorites))
+
+            d3.select("svg")
+                .append("path")
+                .attr("d",tweetLine(data))
+                .attr("fill","none")
+                .attr("stroke",blue)
+                .attr("stroke-wdith",2)
+            d3.select("svg")
+                .append("path")
+                .attr("d",retweetLine(data))
+                .attr("fill","none")
+                .attr("stroke",green)
+                .attr("stroke-wdith",2)
+            d3.select("svg")
+                .append("path")
+                .attr("d",favoriteLine(data))
+                .attr("fill", "none")
+                .attr("stroke",orange)
+                .attr("stroke-wdith",2)
+
+        });
+  </script>
+
+</body>
+</html>
